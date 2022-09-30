@@ -1,4 +1,5 @@
 # Functions used in spectral stray light analysis (taken from The_CFL002_Fcns.R)
+# Written by Loren Albert and KC Cushman
 
 # Contents:
 # SLC_fun_colwise: Function for stray light correction (columns of vectors of spectral pixels)

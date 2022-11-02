@@ -29,7 +29,7 @@
 # rm(list=ls())
 
 ## Change working directory if necessary
-# setwd('/Users/lalbert/Dropbox (Brown)/CFL_002_calib paper/Stray light simulations paper/SL_SIF_analysis_repo/')
+# setwd('/Users/lalbert/Documents/Repos/StrayL_SIF_analysis_repo')
 
 
 ##### INPUTS ##################################

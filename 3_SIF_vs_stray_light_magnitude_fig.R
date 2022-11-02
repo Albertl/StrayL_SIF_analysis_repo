@@ -32,13 +32,13 @@ library(ggplot2)
 library(caTools)
 
 ## define path to figure outputs
-path_figs <- "/Users/lalbert/Dropbox (Brown)/CFL_002_calib paper/Stray light simulations paper/Figures"
+path_figs <- "/Users/lalbert/Documents/Repos/StrayL_SIF_analysis_repo/Figures"
 
 ## define path for spectra input
-path_spectra <- "/Users/lalbert/Dropbox (Brown)/CFL_002_calib paper/Stray light simulations paper/Spectra_output/"
+path_spectra <- "/Users/lalbert/Documents/Repos/StrayL_SIF_analysis_repo/Inputs/"
 
 ## define path for wavelengths file
-path_data_wave <- "/Volumes/Research/IBES_KellnerLab/Shared/NIST_Jan_2018_organized/"
+path_data_wave <- "/Users/lalbert/Documents/Repos/StrayL_SIF_analysis_repo/Inputs/"
 
 # Import SIF spectra (output from make_stray_light_simulations_v2)
 SIFl1 <- read.csv(file = paste(path_spectra, "SIF_SIFl1.csv", sep = ""))
@@ -167,11 +167,11 @@ dev.off()
 
 ### Make plot just showing stray light magnitude (for diffuser and vegetation)
 
-cols_native_SL <- c("SL in solar"="black","SL in vegetation"="grey55","SIF"="#EE604A")
+cols_native_SL <- c("Stray light in solar"="black","Stray light in vegetation"="grey55")
 
 Fig_original_SL <- ggplot() +
-  geom_line(data = data.frame(x = xVals, y = (SolarData - SolarData_SLC)), aes(x=x, y=y, colour = "SL in solar"), alpha = 0.85, size = 0.6) +
-  geom_line(data = data.frame(x = xVals, y = (VegData - VegData_SLC)), aes(x=x, y=y, colour = "SL in vegetation"), alpha = 0.85, size = 0.6) +
+  geom_line(data = data.frame(x = xVals, y = (SolarData - SolarData_SLC)), aes(x=x, y=y, colour = "Stray light in solar"), alpha = 0.85, size = 0.6) +
+  geom_line(data = data.frame(x = xVals, y = (VegData - VegData_SLC)), aes(x=x, y=y, colour = "Stray light in vegetation"), alpha = 0.85, size = 0.6) +
   theme_classic() +
   scale_x_continuous(limits = c(669, 781), breaks=seq(670,780,20), expand = c(0, 0)) +
   xlab("Wavelength (nm)") +
@@ -187,4 +187,4 @@ Fig_original_SL <- ggplot() +
   geom_hline(yintercept = 0, linetype = "solid", color = "black", size = 0.3)
 
 ggsave(filename = paste("Fig_original_SL.pdf", sep = ""), 
-       plot = Fig_original_SL, width = 8, height = 4, units = "in", dpi = 300)
+       plot = Fig_original_SL, width = 8, height = 4, units = "in", dpi = 1654)
